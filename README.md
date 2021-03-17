@@ -24,7 +24,7 @@ Setup
 
 The easiest way to get going is to use https://github.com/Lullabot/trusty32-lamp
 which includes these commands. Otherwise, these scripts expect a
-thinly-provisioned LVM volume named "master" in a "mysql" volume group.
+thinly-provisioned LVM volume named "master" in a "homestead-vg" volume group.
 
 LMM supports the following hooks in `/etc/lmm`. Each hook must be an executable
 file.
@@ -44,20 +44,20 @@ Examples
 
 ```bash
 vagrant@vagrant-ubuntu-trusty-32:~$ sudo lmm status
-Active snapshot: /mysql/master
+Active snapshot: /homestead-vg/master
 
 Database snapshots:
   master
 vagrant@vagrant-ubuntu-trusty-32:~$ sudo lmm branch fancy-feature
   Logical volume "fancy-feature" created
 vagrant@vagrant-ubuntu-trusty-32:~$ sudo lmm status
-Active snapshot: /mysql/master
+Active snapshot: /homestead-vg/master
 
 Database snapshots:
   fancy-feature
   master
 vagrant@vagrant-ubuntu-trusty-32:~$ sudo lmm checkout fancy-feature
-/mysql/master is the currently active database.
+/homestead-vg/master is the currently active database.
  * Stopping MariaDB database server mysqld                                       [ OK ]
 Setting /mysql/fancy-feature as the active database.
  * Starting MariaDB database server mysqld                                       [ OK ]

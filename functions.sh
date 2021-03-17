@@ -40,7 +40,7 @@ delete() {
 
 # Display the amount of free space in the thin pool.
 free() {
-  PCT=`lvs mysql/thinpool -odata_percent --noheadings --rows | cut -c 3-`
+  PCT=`lvs homestead-vg/thinpool -odata_percent --noheadings --rows | cut -c 3-`
   echo ""
   echo "$PCT% used by MySQL databases."
 
